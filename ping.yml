@@ -18,7 +18,7 @@ jobs:
         run: |
          curl --location --request POST 'https://api.github.com/repos/NickReid89/actions-remote-dispatch-c/dispatches' \
          --header 'Accept;' \
-         --header 'Authorization: Bearer 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' \
+         --header 'Authorization: Bearer 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' \
          --header 'Content-Type: text/plain' \
          --data-raw '{
             "event_type":"ping",
@@ -32,7 +32,7 @@ jobs:
           echo "PONG received from '${{ github.event.client_payload.repository }}'" && \
           curl --location --request POST 'https://api.github.com/repos/NickReid89/actions-remote-dispatch-c/dispatches' \
           --header 'Accept;' \
-          --header 'Authorization: Bearer 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' \
+          --header 'Authorization: Bearer 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' \
           --header 'Content-Type: text/plain' \
           --data-raw '{
              "event_type":"ack",

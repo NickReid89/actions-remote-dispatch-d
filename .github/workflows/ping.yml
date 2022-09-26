@@ -31,13 +31,17 @@ jobs:
           --header 'Content-Type: text/plain' \
           --data '{"event_type": "ack", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
           
+      - name: ACK - Store value
+        if: github.event.action == 'pong'
+        run: |        
+          echo "MICROSERVICE_NAME=$(sed -e 's/^"//' -e 's/"$//' <<<"${{ github.event.client_payload.testing }}" )" >> $GITHUB_ENV
+          echo "action_state=yellow" >> $GITHUB_ENV
+          
       - name: ACK - Print value
         if: github.event.action == 'pong'
         run: |
           echo "PONG received from '${{ github.event.client_payload.repository }}'" 
-          echo "MICROSERVICE_NAME=$(sed -e 's/^"//' -e 's/"$//' <<<"${{ github.event.client_payload.testing }}" )" >> $GITHUB_ENV
           echo "${{ env.MICROSERVICE_NAME }} this should be the expected value" # This will output 'yellow' 
-          echo "action_state=yellow" >> $GITHUB_ENV
           echo "${{ env.action_state }}" # This will output 'yellow'
           
 

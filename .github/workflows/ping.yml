@@ -41,7 +41,7 @@ jobs:
         if: github.event.action == 'pong'
         run: |
           echo "PONG received from '${{ github.event.client_payload.repository }}'" 
-          echo "${{ env.MICROSERVICE_NAME }} 
+          echo "${{ env.MICROSERVICE_NAME }} "
           echo "${{ env.action_state }}" # This will output 'yellow'
           
 

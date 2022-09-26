@@ -32,7 +32,7 @@ jobs:
           --data '{"event_type": "ack", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
           
       - name: ACK - Print value
-        if: github.event.action != 'pong'
+        if: github.event.action == 'pong'
         run: |
           echo "PONG received from '${{ github.event.client_payload.repository }}'" 
           echo "MICROSERVICE_NAME=$(sed -e 's/^"//' -e 's/"$//' <<<"${{ github.event.client_payload.testing }}" )" >> $GITHUB_ENV

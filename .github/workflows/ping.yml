@@ -30,3 +30,13 @@ jobs:
           --header 'Authorization: Bearer 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' \
           --header 'Content-Type: text/plain' \
           --data '{"event_type": "ack", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
+          
+      - name: ACK - Print value
+        if: github.event.action != 'pong'
+        run: |
+          echo "PONG received from '${{ github.event.client_payload.repository }}'" 
+          echo "MICROSERVICE_NAME=$(sed -e 's/^"//' -e 's/"$//' <<<"${{ github.event.client_payload.testing }}" )" >> $GITHUB_ENV
+          echo "${{ env.MICROSERVICE_NAME }}" # This will output 'yellow' 
+          
+
+      

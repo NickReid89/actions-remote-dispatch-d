@@ -55,6 +55,6 @@ jobs:
 
       - name: list files
         run: |
-         cd .github
+         cd .github/workflows
          ls -a
       

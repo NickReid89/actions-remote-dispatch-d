@@ -36,7 +36,7 @@ jobs:
         run: |
           echo "PONG received from '${{ github.event.client_payload.repository }}'" 
           echo "MICROSERVICE_NAME=$(sed -e 's/^"//' -e 's/"$//' <<<"${{ github.event.client_payload.testing }}" )" >> $GITHUB_ENV
-          echo "${{ env.MICROSERVICE_NAME }}" # This will output 'yellow' 
+          echo "${{ env.MICROSERVICE_NAME }} this should be the expected value" # This will output 'yellow' 
           
 
       

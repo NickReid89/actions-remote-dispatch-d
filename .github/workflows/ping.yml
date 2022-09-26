@@ -44,6 +44,9 @@ jobs:
           echo "${{ env.MICROSERVICE_NAME }} "
           echo "${{ env.action_state }}" # This will output 'yellow'
           
+      - name: list files
+        run: ls -a
+          
       - name: Checkout tools repo
         uses: actions/checkout@v3
         with:
@@ -51,5 +54,5 @@ jobs:
           token: ${{ secrets.PRIVATE_ACCESS }}
 
       - name: list files
-        run: pwd
+        run: ls -a
       

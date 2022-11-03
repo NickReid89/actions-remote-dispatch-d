@@ -12,14 +12,20 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-      uses: NickReid89/workflow-templates/.github/workflows/JobID.yml@d603f1211c5fe71f3aa3416c3f8de4ed648cd0f7
+    runs-on: ubuntu-latest
+    steps:  
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
       
-      uses: NickReid89/workflow-templates/.github/workflows/Job2.yml@c59134754bdd841b3d0665dce080902251af1a10
-      
-        
-        
+      - name: test
+        uses: NickReid89/workflow-templates/.github/workflows/directoryOne/action.yml@13c3dd72f2f667026233ab114b312081f2b6e665
+
+      - name: test two
+        uses: NickReid89/workflow-templates/.github/workflows/directoryTwo/action/yml@13c3dd72f2f667026233ab114b312081f2b6e665
+
+
+
 
 
 

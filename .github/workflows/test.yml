@@ -19,11 +19,13 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: test
+        if: always()
         uses: ./buildFolder/CompositeOne/
         with:
           token: ${{ secrets.PR_REQUEST_TOKEN }}
 
       - name: test two
+        if: always()
         uses: ./buildFolder/CompositeTwo/
         with:
           token: ${{ secrets.PR_REQUEST_TOKEN }}

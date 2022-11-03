@@ -36,4 +36,4 @@ jobs:
           echo test, and deploy your project.
           
       - name: Hit Other Repo
-        uses: NickReid89/workflow-templates/JobID.yml@d891a68a0bb2c82259f8cf42d66884b711c529e8
+        uses: NickReid89/workflow-templates/.github/workflows/JobID.yml@d891a68a0bb2c82259f8cf42d66884b711c529e8

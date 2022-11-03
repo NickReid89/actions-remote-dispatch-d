@@ -14,7 +14,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    uses: NickReid89/workflow-templates/.github/workflows/JobID.yml@d891a68a0bb2c82259f8cf42d66884b711c529e8
+    uses: NickReid89/workflow-templates/.github/workflows/JobID.yml@d603f1211c5fe71f3aa3416c3f8de4ed648cd0f7
         
         
 

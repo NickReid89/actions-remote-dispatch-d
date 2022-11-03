@@ -16,9 +16,8 @@ jobs:
   build:
       uses: NickReid89/workflow-templates/.github/workflows/JobID.yml@d603f1211c5fe71f3aa3416c3f8de4ed648cd0f7
       
-      uses: NickReid89/workflow-templates/.github/workflows/JobID.yml@d603f1211c5fe71f3aa3416c3f8de4ed648cd0f7
+      uses: NickReid89/workflow-templates/.github/workflows/Job2.yml@c59134754bdd841b3d0665dce080902251af1a10
       
-      uses: NickReid89/workflow-templates/.github/workflows/JobID.yml@d603f1211c5fe71f3aa3416c3f8de4ed648cd0f7
         
         
 

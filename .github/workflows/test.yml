@@ -1,10 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
 name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   workflow_call:
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -15,18 +12,20 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      - name: test
-        if: always()
-        uses: ./buildFolder/CompositeOne/
-        with:
-          token: ${{ secrets.PR_REQUEST_TOKEN }}
+      # - name: test
+      #   if: always()
+      #   uses: ./buildFolder/CompositeOne/
+      #   with:
+      #     token: ${{ secrets.PR_REQUEST_TOKEN }}
 
-      - name: test two
-        if: always()
-        uses: ./buildFolder/CompositeTwo/
-        with:
-          token: ${{ secrets.PR_REQUEST_TOKEN }}
+      # - name: test two
+      #   if: always()
+      #   uses: ./buildFolder/CompositeTwo/
+      #   with:
+      #     token: ${{ secrets.PR_REQUEST_TOKEN }}
 
+      - name: echo world
+        run: echo "hello World"
 
 
 

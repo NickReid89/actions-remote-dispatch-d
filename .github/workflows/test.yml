@@ -20,9 +20,13 @@ jobs:
       
       - name: test
         uses: ./buildFolder/CompositeOne/
+        with:
+          token: ${{ secrets.PR_REQUEST_TOKEN }}
 
       - name: test two
         uses: ./buildFolder/CompositeTwo/
+        with:
+          token: ${{ secrets.PR_REQUEST_TOKEN }}
 
 
 

@@ -18,7 +18,7 @@ runs:
         with:
           github_token: ${{ inputs.token }}
           job_name: build
-          per_page: 30
+          per_page: 30   
           
       - name: Output Current Job Log URL
         run: echo ${{ steps.jobs.outputs.html_url }}

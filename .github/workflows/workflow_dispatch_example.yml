@@ -41,6 +41,9 @@ jobs:
           echo "${{ env.MICROSERVICE_NAME }} "
           echo "${{ env.action_state }}" # This will output 'yellow'
           
+      - name: print testvalue
+        run: echo ${{ inputs.testvalue}} value
+          
       - name: list files
         if: ${{ inputs.testvalue == 'true' }}
         run: ls -a

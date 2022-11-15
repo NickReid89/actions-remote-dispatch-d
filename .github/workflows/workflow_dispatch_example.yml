@@ -45,5 +45,5 @@ jobs:
         run: echo ${{ inputs.testvalue}} value
           
       - name: list files
-        if: inputs.testvalue == 'true' 
+        if: inputs.testvalue == true
         run: ls -a

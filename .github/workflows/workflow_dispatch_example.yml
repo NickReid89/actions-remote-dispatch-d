@@ -18,6 +18,10 @@ on:
         description: 'repo to use'
         type: string
         required: true
+      testvalue:
+        description: 'todo'
+        required: false
+        type: boolean
 
 jobs:
   log-the-inputs:
@@ -38,4 +42,5 @@ jobs:
           echo "${{ env.action_state }}" # This will output 'yellow'
           
       - name: list files
+        if: ${{ inputs.testvalue == 'true' }}
         run: ls -a
